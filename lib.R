@@ -20,9 +20,9 @@ weak.couple <- function(row,col,err=1) {
     return("and")
   if (xor.b >= (n-err))
     return("xor")
-  if (xn4y.b >= (n-err) && xn4y.o >= err+1)
+  if (rn4c.b >= (n-err) && rn4c.o >= err+1)
     return("rn4c")
-  if (yn4x.b >= (n-err) && yn4x.o >= err+1)
+  if (rn4c.b >= (n-err) && rn4c.o >= err+1)
     return("cn4r")
   return("mix")
 }
