@@ -38,7 +38,7 @@ weak.couple.enum <- function(s) {
 }
 
 # 0: no class; 1: and; 2: rn4c (row necessary for col); 3: cn4r (col necessary for row); 4: xor; 5: mix
-all.pairs.weak <- function(M, th=0.2) {
+all.pairs.weak <- function(M, err=1, th=0.2) {
   n <- dim(M)[1]
   D <- matrix(data=1,nrow=n,ncol=n)
   rownames(D) <- rownames(M)
@@ -46,7 +46,7 @@ all.pairs.weak <- function(M, th=0.2) {
   B <- M > th
   for (i in 1:(n-1)) {
     for (j in (i+1):n) {
-      p <- weak.couple(B[i,],B[j,])
+      p <- weak.couple(B[i,],B[j,], err=err)
       s <- weak.couple.enum(p)
       D[i,j] <- s
       if (D[i,j] == 2) {
